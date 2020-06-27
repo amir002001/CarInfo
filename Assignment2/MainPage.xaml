@@ -48,7 +48,7 @@
         <Button Content="Update" Grid.Row="7" Grid.Column="2" HorizontalAlignment="Stretch" Margin="30,0" CornerRadius="5" FontSize="20"></Button>
 
         <ListBox Grid.Column="3" Grid.Row="1" Grid.RowSpan="6"></ListBox>
-        <Image Grid.Column="4" Grid.Row="2" Grid.RowSpan="3" Margin="30" Source="/Assets/StoreLogo.png"/>
+        <Image Grid.Column="4" Grid.Row="2" Grid.RowSpan="3" Margin="30" Source="/Assets/Square44x44Logo.targetsize-24_altform-unplated.png"/>
         <TextBlock Grid.Column="3"  Grid.Row="7" Grid.ColumnSpan="2" Margin="20,20,30,50" Text="TextBlock" />
     </Grid>
 </Page>
