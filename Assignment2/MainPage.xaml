@@ -29,12 +29,12 @@
         
         <TextBlock Grid.ColumnSpan="5" FontSize="60" Text="DriveWell Inc." TextAlignment="Center" VerticalAlignment="Center"></TextBlock>
         
-        <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" FontSize="25" Margin="20"></TextBox>
-        <TextBox Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" FontSize="25" Margin="20"></TextBox>
-        <TextBox Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" FontSize="25" Margin="20"></TextBox>
-        <TextBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" FontSize="25" Margin="20"></TextBox>
-        <TextBox Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" FontSize="25" Margin="20"></TextBox>
-        <TextBox Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" FontSize="25" Margin="20"></TextBox>
+        <TextBox x:Name="VinNumberTB" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" FontSize="25" Margin="20"></TextBox>
+        <TextBox x:Name="CarMakeTB" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" FontSize="25" Margin="20"></TextBox>
+        <ComboBox x:Name="CarTypeCB" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="25" Margin="20"></ComboBox>
+        <TextBox x:Name="PurchasePriceTB" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" FontSize="25" Margin="20"></TextBox>
+        <ComboBox x:Name="ModelYearCB" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="25" Margin="20"></ComboBox>
+        <TextBox x:Name="MileageTB" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" FontSize="25" Margin="20"></TextBox>
         
         <TextBlock Grid.Row="1" Margin="50,0,0,0" Text="VIN Number" VerticalAlignment="Center" FontSize="25"></TextBlock>
         <TextBlock Grid.Row="2" Margin="50,0,0,0" Text="Car make" VerticalAlignment="Center" FontSize="25"></TextBlock>
@@ -43,12 +43,12 @@
         <TextBlock Grid.Row="5" Margin="50,0,0,0" Text="Model Year" VerticalAlignment="Center" FontSize="25"></TextBlock>
         <TextBlock Grid.Row="6" Margin="50,0,0,0" Text="Mileage (Km)" VerticalAlignment="Center" FontSize="25"></TextBlock>
 
-        <Button Content="Add Car" Grid.Row="7" Grid.Column="0" HorizontalAlignment="Stretch" Margin="30,0" CornerRadius="5" FontSize="20"></Button>
-        <Button Content="Clear" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Stretch" Margin="30,0" CornerRadius="5" FontSize="20"></Button>
-        <Button Content="Update" Grid.Row="7" Grid.Column="2" HorizontalAlignment="Stretch" Margin="30,0" CornerRadius="5" FontSize="20"></Button>
+        <Button x:Name="AddCarBtn" Content="Add Car" Grid.Row="7" Grid.Column="0" HorizontalAlignment="Stretch" Margin="30,0" CornerRadius="5" FontSize="20" Click="OnClickAddCar"></Button>
+        <Button Content="Clear" Grid.Row="7" Grid.Column="1" HorizontalAlignment="Stretch" Margin="30,0" CornerRadius="5" FontSize="20" Click="OnClickClear"></Button>
+        <Button Content="Update" Grid.Row="7" Grid.Column="2" HorizontalAlignment="Stretch" Margin="30,0" CornerRadius="5" FontSize="20" Click="OnClickUpdateCar"></Button>
 
-        <ListBox Grid.Column="3" Grid.Row="1" Grid.RowSpan="6"></ListBox>
-        <Image Grid.Column="4" Grid.Row="2" Grid.RowSpan="3" Margin="30" Source="/Assets/Square44x44Logo.targetsize-24_altform-unplated.png"/>
-        <TextBlock Grid.Column="3"  Grid.Row="7" Grid.ColumnSpan="2" Margin="20,20,30,50" Text="TextBlock" />
+        <ListBox x:Name="CarLST" Grid.Column="3" Grid.Row="1" Grid.RowSpan="6" SelectionChanged="OnCarSelectionChanged"></ListBox>
+        <Image x:Name="CarIMG" Grid.Column="4" Grid.Row="2" Grid.RowSpan="3" Margin="30" Source="/Assets/Square44x44Logo.targetsize-24_altform-unplated.png"/>
+        <TextBlock x:Name="ErrorTBlock" Grid.Column="3"  Grid.Row="7" Grid.ColumnSpan="2" Margin="20,20,30,50" Text="" FontSize="15" Foreground="Red" />
     </Grid>
 </Page>
