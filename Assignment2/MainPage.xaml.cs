@@ -16,7 +16,7 @@ using CarLib;
 using Windows.UI.Xaml.Media.Imaging;
 using System.Collections;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+
 
 namespace Assignment2
 {
@@ -67,8 +67,8 @@ namespace Assignment2
             catch (Exception ex)
             {
                 ErrorTBlock.Text = ex.Message;
-            } 
-            
+            }
+
         }
 
         /// <summary>
@@ -110,7 +110,13 @@ namespace Assignment2
         {
             try
             {
-                _repo.UpdateCar(BoxValidator());
+                ArrayList toBePassed = BoxValidator();
+                _repo.UpdateCar((string)toBePassed[0], 
+                    (string)toBePassed[1], 
+                    (CarType)toBePassed[2], 
+                    (float)toBePassed[3], 
+                    (int)toBePassed[4], 
+                    (int)toBePassed[5]);
                 ErrorTBlock.Text = "";
             }
             catch (Exception ex)
@@ -119,6 +125,13 @@ namespace Assignment2
             }
 
         }
+        /// <summary>
+        /// Validates the text boxes' contents to the point where it can be parsed and used. The rest is on the Car constructor.
+        /// </summary>
+        /// <returns>
+        /// An arrayList that has all of the objects required to create a car in sequence, which can be accessed by their indexes.
+        /// index 0  is Vin number, 1 is Car Make, 2 is Car type, 3 is Purchase Price, 4 is Model Year, 5 is Mileage.
+        /// </returns>
         private ArrayList BoxValidator()
         {
             ArrayList arr = new ArrayList();
