@@ -63,6 +63,7 @@ namespace Assignment2
                 _repo.AddCar(newCar);
                 CarLST.Items.Add(newCar);
                 ErrorTBlock.Text = "";
+                ProvideDetails();
             }
             catch (Exception ex)
             {
@@ -86,11 +87,18 @@ namespace Assignment2
             MileageTB.Text = "";
         }
         /// <summary>
-        /// Displays car's details when selection is changed
+        /// calls the provideDetails function when selection of list box is changed.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void OnCarSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ProvideDetails();
+        }
+        /// <summary>
+        /// Fills in the Text Boxes with The Car's details.
+        /// </summary>
+        private void ProvideDetails()
         {
             Car tmpCar = (Car)CarLST.SelectedItem;
             VinNumberTB.Text = tmpCar.VinNumber;
@@ -118,6 +126,7 @@ namespace Assignment2
                     (int)toBePassed[4], 
                     (int)toBePassed[5]);
                 ErrorTBlock.Text = "";
+                ProvideDetails();
             }
             catch (Exception ex)
             {
