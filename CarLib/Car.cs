@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 
@@ -25,15 +24,14 @@ namespace CarLib
         /// <summary>
         /// Property for Vin number. If Vin number exists within _vinList, an exception is thrown, otherwise the new Vin replaces the old one.
         /// </summary>
-        [Required(ErrorMessage = "Vin Number is required")]
         public string VinNumber
         {
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
-                    throw new ValidationException("Vin Number is required");
+                    throw new Exception("Vin Number is required");
                 if (_vinList.Contains(value))
-                    throw new ValidationException("vin number exists");
+                    throw new Exception("vin number exists");
                 _vinList.Remove(_vinNumber);
                 this._vinNumber = value;
                 _vinList.Add(_vinNumber);
@@ -48,7 +46,7 @@ namespace CarLib
             set
             {
                 if (string.IsNullOrWhiteSpace(value))
-                    throw new ValidationException("Car make is required");
+                    throw new Exception("Car make is required");
                 this._carMake = value;
             }
             get => this._carMake;
@@ -69,7 +67,7 @@ namespace CarLib
             set
             {
                 if (value < 0)
-                    throw new ValidationException("Purchase price can't be negative");
+                    throw new Exception("Purchase price can't be negative");
                 this._purchasePrice = value;
             }
             get => this._purchasePrice;
@@ -83,7 +81,7 @@ namespace CarLib
             set
             {
                 if (value < 2010 || value > 2020)
-                    throw new ValidationException("Model Year is impossible.");
+                    throw new Exception("Model Year is impossible.");
                 this._modelYear = value;
             }
             get => this._modelYear;
@@ -97,7 +95,7 @@ namespace CarLib
             set
             {
                 if (value < 0)
-                    throw new ValidationException("Mileage can't be negative");
+                    throw new Exception("Mileage can't be negative");
                 this._mileage = value;
             }
             get => this._mileage;
