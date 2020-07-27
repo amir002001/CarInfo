@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment2", "Assignment2\Assignment2.csproj", "{5BD42AF2-635E-49D7-BB5F-52F21B452CD9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarDealership", "Assignment2\CarDealership.csproj", "{5BD42AF2-635E-49D7-BB5F-52F21B452CD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarLib", "CarLib\CarLib.csproj", "{0AD6C83C-6C40-473B-ADBF-44EA7D0368D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarLib", "CarLib\CarLib.csproj", "{0AD6C83C-6C40-473B-ADBF-44EA7D0368D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
